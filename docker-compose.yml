@@ -1,5 +1,3 @@
-version: '3.9'
-
 services:
 
   guacd:
@@ -43,7 +41,8 @@ services:
 
     networks:
       - guacnet
-
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
   nginx:
     image: nginx:alpine
     container_name: guac-nginx
